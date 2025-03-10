@@ -1,0 +1,14 @@
+1. TRANSACTIONS
+-Transaction: là một quá trình xử lý có điểm bắt đầu và điểm kết thúc. Nó gồm nhiều bước nhỏ chạy tuần tự và độc lập với nhau. Nguyên tắc là: hoặc tất cả các bước đều thành công, hoặc nếu một bước bị lỗi thì toàn bộ giao dịch bị hủy, dữ liệu quay về trạng thái ban đầu (rollback).
+Ví dụ: Khi rút tiền ở ATM, hệ thống sẽ kiểm tra số dư, trừ tiền trong tài khoản rồi mới nhả tiền ra. Nếu một bước nào đó bị lỗi, giao dịch sẽ bị hủy và số tiền trong tài khoản không thay đổi.
+
+2. PROCEDURE VÀ TRIGGER
+-Stored Procedure (SP) là một đoạn code SQL được lưu sẵn trong cơ sở dữ liệu, giúp chúng ta không cần viết đi viết lại cùng một truy vấn nhiều lần. Khi cần thì chỉ việc gọi SP là nó sẽ chạy ngay, giúp xử lý dữ liệu nhanh hơn và tối ưu hiệu suất.
+Nó cũng có thể nhận tham số để chạy linh hoạt hơn. Ví dụ thay vì viết lại câu lệnh truy vấn để lọc sản phẩm theo danh mục, chúng ta chỉ cần gọi SP và truyền vào ID danh mục.
+Nói đơn giản, SP giống như một "hàm" trong lập trình, nhưng được lưu và chạy trực tiếp trong database.
+-Trigger là một cơ chế tự động thực hiện một đoạn SQL khi có sự kiện xảy ra trong bảng, như INSERT, UPDATE, DELETE. Nó có thể dùng để kiểm tra dữ liệu, cập nhật bảng khác hoặc lưu lại lịch sử thay đổi.
+Ví dụ: Khi bạn cập nhật giá sản phẩm, Trigger có thể tự động lưu giá cũ vào bảng lịch sử trước khi thay đổi.
+Trigger chạy mỗi khi có thay đổi trên bảng, nên nếu dùng nhiều có thể làm chậm hệ thống.
+3. INDEX
+-Index là một cấu trúc dữ liệu được dùng để định vị và truy cập nhanh nhất vào dữ liệu trong các bảng database
+-Index là một cách tối ưu hiệu suất truy vấn database bằng việc giảm lượng truy cập vào bộ nhớ khi thực hiện truy vấn
