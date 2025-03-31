@@ -14,6 +14,7 @@ import jakarta.validation.constraints.Size;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
 @Entity
 @Data
@@ -28,7 +29,8 @@ public class Brand {
     @NotBlank
     @Size(min = 3, message = "Brand name must contain at least 3 characters")
     private String brandName;
-    
+
+    @JsonIgnore // Prevents serialization of products in BrandDTO
     @OneToMany(mappedBy = "brand", cascade = CascadeType.ALL)
     private List<Product> products;
 }
