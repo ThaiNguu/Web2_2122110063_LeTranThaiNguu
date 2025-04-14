@@ -30,13 +30,13 @@ public class BrandController {
         return new ResponseEntity<>(savedBrandDTO, HttpStatus.CREATED);
     }
 
-    @GetMapping("/public/brands")
+    @GetMapping("/admin/brands")
     public ResponseEntity<List<BrandDTO>> getBrands() {
         List<BrandDTO> brands = brandService.getAllBrands();
         return new ResponseEntity<>(brands, HttpStatus.OK);
     }
 
-    @GetMapping("/public/brands/{brandId}")
+    @GetMapping("/admin/brands/{brandId}")
     public ResponseEntity<BrandDTO> getOneBrand(@PathVariable Long brandId) {
         BrandDTO brandDTO = brandService.getBrandById(brandId);
         return new ResponseEntity<>(brandDTO, HttpStatus.OK);
